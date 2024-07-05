@@ -37,6 +37,7 @@ import ViewOrder from "./pages/UserPanel/ViewOrder/ViewOrder"
 import EditAccount from "./pages/UserPanel/EditAccount/EditAccount"
 
 import NotFound from "./pages/404/404"
+
 const routes = [
   { path: "/", element: <Index /> },
   { path: "/about", element: <About /> },

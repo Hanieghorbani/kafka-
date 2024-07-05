@@ -6,6 +6,7 @@ import { IoMoonSharp, IoHomeSharp } from "react-icons/io5"
 import { FaBars } from "react-icons/fa6"
 
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 export default function Topbar({ isShowNotifs, setIsShowNotifs }) {
   const [notifs, setNotifs] = useState([])
@@ -27,7 +28,11 @@ export default function Topbar({ isShowNotifs, setIsShowNotifs }) {
 
   function seeNotif(id) {
     axios
-      .put(`https://lafka-back.liara.run/v1/notifications/see/${id}`, {}, config)
+      .put(
+        `https://lafka-back.liara.run/v1/notifications/see/${id}`,
+        {},
+        config
+      )
       .then(() => getAllNotifs())
   }
 
@@ -38,13 +43,17 @@ export default function Topbar({ isShowNotifs, setIsShowNotifs }) {
           className="sm:block lg:hidden border-2 rounded-full p-3 w-12 h-12 cursor-pointer"
           onClick={() => setIsOpenSidebarMenuPAdmin(true)}
         />
+        <Link to={'/'}>
+
         <IoHomeSharp className="sm:hidden lg:block border-2 rounded-full p-3 w-12 h-12 cursor-pointer" />
+        </Link>
 
         <IoMdNotifications
           className="sm:hidden lg:block border-2 rounded-full p-3 w-12 h-12 cursor-pointer"
           onMouseEnter={() => setIsShowNotifs(true)}
         />
-        <IoMoonSharp className="sm:hidden md:block border-2 rounded-full p-3 w-12 h-12 cursor-pointer" />
+          <IoMoonSharp className="sm:hidden md:block border-2 rounded-full p-3 w-12 h-12 cursor-pointer" />
+       
 
         {isShowNotifs && (
           <ul
@@ -54,7 +63,7 @@ export default function Topbar({ isShowNotifs, setIsShowNotifs }) {
             <IoMdArrowDropup className="text-green-400 text-4xl -mt-7 sm:hidden lg:block" />
             <IoMdClose
               onClick={() => setIsShowNotifs(false)}
-              className=" cursor-pointer"
+              className="cursor-pointer mr-[10px]"
             />
             {notifs.length > 0 ? (
               <div className="space-y-3">
@@ -74,7 +83,7 @@ export default function Topbar({ isShowNotifs, setIsShowNotifs }) {
                 ))}
               </div>
             ) : (
-              <li className="text-lg">هیچ پیغامی وجود ندارد!</li>
+              <li className="text-lg mr-[10px]">هیچ پیغامی وجود ندارد!</li>
             )}
           </ul>
         )}

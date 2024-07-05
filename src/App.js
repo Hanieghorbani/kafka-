@@ -188,7 +188,7 @@ function App() {
   function addfavouriteHandler(prodInfos) {
     const existingItem = favourites.find((prod) => prod._id === prodInfos._id)
     if (existingItem) {
-      toast.error("این محصول در سبد خرید شما وجود دارد", {
+      toast.error("این محصول در لیست علاقه مندی های شما وجود دارد", {
         position: toast.POSITION.TOP_LEFT,
       })
     } else {

@@ -5,7 +5,6 @@ import Footer from "../../../components/Main/Footer/Footer"
 import Input from "../../../components/Fields/Input/Input"
 import TextArea from "../../../components/Fields/TextArea/TextArea"
 
-
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import axios from "axios"
@@ -18,7 +17,7 @@ export default function Contacts() {
   const { config } = useContext(ContextData)
   const [captcha, setCaptcha] = useState("")
   const [answer, setAnswer] = useState("")
-
+  
   useEffect(()=>window.scrollTo(0, 0),[])
   const initialValues = {
     name: "",

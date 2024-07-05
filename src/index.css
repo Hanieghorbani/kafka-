@@ -31,12 +31,16 @@
     select {
         box-shadow: none !important;
     }
+    ::-webkit-scrollbar {
+        @apply md:w-1;
+    }
 
     ::-webkit-scrollbar-thumb {
-        @apply bg-dark  !important;
+        @apply bg-dark rounded-xl  !important;
     }
-    ::-webkit-scrollbar-thumb {
-        @apply w-2  !important;
+    
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-300 rounded-2xl;
     }
 }
 
